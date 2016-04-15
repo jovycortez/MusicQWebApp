@@ -1,18 +1,26 @@
+<?php include 'conn.php' ?>
 <?php
-require "conn.php";
-$user_name = "";
-$user_pass = "";
-$mysql_qry = "select * from playlist"
 
-$result = mysql_qry($conn, $mysql_qry);
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT * FROM musicqdb.playlist";
+$result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
+
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+        echo "id: " . $row["playlistId"]. "<br />Name: " . $row["playlistName"]. "<br>";
     }
 } else {
     echo "0 results";
 }
-$conn->close() 
+$conn->close();
+
 ?>
