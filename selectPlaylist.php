@@ -1,6 +1,6 @@
 <?php include 'conn.php' ?>
-<?php
 
+<?php
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

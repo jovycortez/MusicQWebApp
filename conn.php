@@ -5,8 +5,6 @@ $password = "86dec4d4";
 $dbname = "MusicQdb";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn) {
-  echo "pass";
-}
+
 
 ?>
