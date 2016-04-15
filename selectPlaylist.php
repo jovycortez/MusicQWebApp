@@ -7,7 +7,7 @@ $mysql_qry = "select * from playlist"
 $result = mysql_qry($conn, $mysql_qry);
 
 if(mysqli_num_rows($result) > 0){
-echo "Playlist empty";
+echo $result;
 }
 else{
 echo "Playlist success"
