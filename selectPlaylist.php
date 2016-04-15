@@ -6,10 +6,13 @@ $mysql_qry = "select * from playlist"
 
 $result = mysql_qry($conn, $mysql_qry);
 
-if(mysqli_num_rows($result) > 0){
-echo $result;
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+    }
+} else {
+    echo "0 results";
 }
-else{
-echo "Playlist success"
-}
+$conn->close() 
 ?>

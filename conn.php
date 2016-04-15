@@ -7,7 +7,7 @@ $dbname = "MusicQdb";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn) {
   echo "pass";
-	<h1>pass</h1>
+	
 }
 
 ?>
