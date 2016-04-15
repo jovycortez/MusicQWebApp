@@ -3,7 +3,19 @@
 <?php
 $party_name = $_POST ["party_name"];
 
-$sql_insert = "insert into musicqdb.playlist values('$party_name')"
+$sql_insert = "insert into musicqdb.playlist(playlistId,playlistName) values(null,'$party_name')"
 
-if(mysqli_query($con,sql_query ))
+$result = $conn->query($sql_insert);
+
+if($result === TRUE){
+	
+	echo"insert sucessful!";
+}
+
+else{
+	echo "Error: ". $sql_insert . "<br>" . $conn->error;
+	
+}
+$conn->close();
+
 ?>
